@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopno - আপনার অনলাইন দোকান</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>🛍️ Shopno</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">হোম</a></li>
+                <li><a href="#products">পণ্য</a></li>
+                <li><a href="#cart" class="cart-link">কার্ট <span id="cart-count">0</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>আপনার পছন্দের পণ্য এখানে পাবেন</h2>
+            <p>সেরা মানের পণ্য সাশ্রয়ী মূল্যে</p>
+            <a href="#products" class="btn btn-primary">কেনাকাটা শুরু করুন</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2>আমাদের পণ্য</h2>
+            <div id="products-list" class="products-grid"></div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>শপিং কার্ট</h2>
+            <div id="cart-items" class="cart-items"></div>
+            <div class="cart-summary">
+                <h3>মোট: <span id="total-price">0</span> টাকা</h3>
+            </div>
+            <form id="payment-form">
+                <input type="email" id="customer-email" placeholder="আপনার ইমেইল" required>
+                <div id="card-element"></div>
+                <div id="card-errors" role="alert"></div>
+                <button type="submit" class="btn btn-success">পেমেন্ট করুন</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="product-detail" class="product-detail"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Shopno - সব অধিকার সংরক্ষিত</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
